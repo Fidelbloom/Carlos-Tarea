@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import Card from './components/card/card'
+import CardContainer from './components/cardContainer/cardContainer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="border-2 h-screen">
+      <div className="h-1/6">
+        <CardContainer cards={
+          [1,2,3,4,5,6,7,8].map( (number) => {
+            return <Card number={number}/>
+          })
+        }/>
+      </div>
+      
     </div>
   );
 }
